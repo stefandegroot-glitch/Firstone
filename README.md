@@ -41,9 +41,17 @@ npm start            # = python3 -m http.server 8080
 # dann http://localhost:8080 öffnen
 ```
 
-Für die Kamera auf dem Handy wird **HTTPS** benötigt. Am einfachsten über GitHub Pages
-veröffentlichen (Settings → Pages → Branch auswählen) und die Seite dann auf dem Handy
-„Zum Startbildschirm hinzufügen“.
+Für die Kamera auf dem Handy wird **HTTPS** benötigt – am einfachsten über GitHub Pages.
+
+### GitHub Pages
+
+Der Workflow `.github/workflows/pages.yml` testet und veröffentlicht die App bei jedem Push.
+Einmalig nötig: **Settings → Pages → Build and deployment → Source: „GitHub Actions“**.
+Danach ist die App unter `https://<benutzer>.github.io/<repo>/` erreichbar; auf dem Handy
+öffnen und „Zum Startbildschirm hinzufügen“.
+
+Hinweis: Mit einem kostenlosen GitHub-Konto funktioniert Pages nur für öffentliche Repositories.
+Deine Fotos landen nie im Repository – sie bleiben lokal auf dem Gerät.
 
 ## Tests
 
