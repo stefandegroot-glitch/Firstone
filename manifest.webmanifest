@@ -1,0 +1,14 @@
+{
+  "name": "Zeitraffer – Foto-Morphing",
+  "short_name": "Zeitraffer",
+  "description": "Jeden Tag ein Foto – daraus entsteht ein Zeitraffer-Video, in dem die Bilder ineinander morphen.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#14161c",
+  "theme_color": "#14161c",
+  "lang": "de",
+  "icons": [
+    { "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
