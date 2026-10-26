@@ -2,7 +2,7 @@ name: GitHub Pages
 
 on:
   push:
-    branches: [main, claude/timelapse-photo-morphing-app-yutoky]
+    branches: [main, claude/timelapse-photo-morphing-app-yutoky, claude/cookie-cutter-stl-app]
   workflow_dispatch:
 
 permissions:
@@ -29,7 +29,8 @@ jobs:
       - name: Seite zusammenstellen
         run: |
           mkdir _site
-          cp -r index.html manifest.webmanifest sw.js .nojekyll css js icons _site/
+          cp -r index.html manifest.webmanifest sw.js .nojekyll css js icons ausstecher _site/
+          rm -rf _site/ausstecher/test
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
       - id: deployment

@@ -4,6 +4,6 @@
   "type": "module",
   "scripts": {
     "start": "python3 -m http.server 8080",
-    "test": "node --test test/*.test.js"
+    "test": "node --test test/*.test.js ausstecher/test/*.test.js"
   }
 }

@@ -1,0 +1,108 @@
+:root {
+  --bg: #f7f1e8;
+  --card: #fffdf9;
+  --border: #e6dccd;
+  --text: #2b2118;
+  --muted: #7a6a58;
+  --accent: #b5652a;
+  --accent-text: #fff;
+  --input: #f3ebdf;
+  --c-cutter: #8e98a8;
+  --c-rim: #c4cad4;
+  --c-plate: #e9c58f;
+  --c-relief: #8a4f22;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1b1712;
+    --card: #26201a;
+    --border: #3a3128;
+    --text: #f1e8dc;
+    --muted: #b0a08c;
+    --accent: #e08a45;
+    --accent-text: #1b1206;
+    --input: #322a22;
+    color-scheme: dark;
+  }
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+.app-header, main, footer { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
+.app-header { padding-top: 20px; }
+footer { padding-bottom: 24px; }
+h1 { margin: 0 0 4px; font-size: 1.7rem; }
+h2 { margin: 0 0 12px; font-size: 1.15rem; }
+a { color: var(--accent); }
+.muted { color: var(--muted); }
+.small { font-size: 0.85rem; }
+.hint { color: var(--muted); font-size: 0.875rem; margin: 8px 0 0; }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px;
+  margin: 16px 0;
+}
+.card-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+.row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 12px; }
+
+button {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  min-height: 44px; padding: 0 16px;
+  border-radius: 10px; border: 1px solid var(--border);
+  background: var(--input); color: var(--text);
+  font: inherit; cursor: pointer;
+}
+button:disabled { opacity: 0.5; cursor: default; }
+.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-text); font-weight: 600; }
+
+.drop {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;
+  min-height: 120px; padding: 16px; text-align: center;
+  border: 2px dashed var(--border); border-radius: 12px; cursor: pointer;
+}
+.drop span { font-weight: 600; font-size: 1.05rem; }
+.drop.over { border-color: var(--accent); background: var(--input); }
+
+.segmented { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+.segmented button { min-height: 38px; padding: 0 12px; }
+.segmented button.active { background: var(--accent); border-color: var(--accent); color: var(--accent-text); }
+
+.settings {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px 20px;
+}
+.settings label { display: flex; flex-direction: column; gap: 2px; font-size: 0.9rem; color: var(--muted); }
+.settings label span { display: flex; justify-content: space-between; gap: 8px; }
+.settings output { color: var(--text); font-variant-numeric: tabular-nums; }
+.settings select { min-height: 40px; border-radius: 8px; border: 1px solid var(--border); background: var(--input); color: var(--text); font: inherit; padding: 0 8px; }
+.settings input[type="range"] { width: 100%; accent-color: var(--accent); }
+label.check { flex-direction: row !important; align-items: center; gap: 8px !important; color: var(--text) !important; }
+.check input { accent-color: var(--accent); width: 18px; height: 18px; }
+[hidden] { display: none !important; }
+
+.previews { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+@media (max-width: 760px) { .previews { grid-template-columns: 1fr; } }
+.preview2d, .preview3d {
+  width: 100%; aspect-ratio: 1; display: block;
+  border-radius: 10px; background: var(--input);
+  touch-action: none;
+}
+.preview2d { object-fit: contain; cursor: crosshair; }
+.preview3d { cursor: grab; }
+.legend { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 0.85rem; color: var(--muted); margin: 8px 0 0; }
+.legend i { display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 5px; vertical-align: -1px; }
+
+.tips { margin-top: 14px; }
+.tips summary { cursor: pointer; font-weight: 600; }
+.tips li { margin: 4px 0; }

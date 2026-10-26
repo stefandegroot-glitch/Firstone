@@ -1,5 +1,8 @@
 # Zeitraffer – Foto-Morphing
 
+> Ebenfalls in diesem Repository: [**Keks-Ausstecher aus Foto**](ausstecher/) erzeugt aus einem Foto einen
+> Keksausstecher mit Prägestempel als STL-Datei (erreichbar unter `/ausstecher/`).
+
 Jeden Tag ein Foto aufnehmen – die App macht daraus ein Zeitraffer-Video, in dem die Bilder
 fließend ineinander **morphen** (nicht nur überblenden).
 
